@@ -2,9 +2,10 @@
 
 /**
  * Unregister default widgets
+ *
  * @link https://codex.wordpress.org/Function_Reference/unregister_widget
  */
-add_action( 'widgets_init', function () {
+function ccd_unregister_widgets() {
   unregister_widget( 'WP_Widget_Pages' );
   unregister_widget( 'WP_Widget_Calendar' );
   unregister_widget( 'WP_Widget_Archives' );
@@ -22,4 +23,5 @@ add_action( 'widgets_init', function () {
   unregister_widget( 'WP_Widget_Tag_Cloud' );
   unregister_widget( 'WP_Nav_Menu_Widget' );
   unregister_widget( 'WP_Widget_Custom_HTML' );
-}, 11);
+}
+add_action( 'widgets_init', 'ccd_unregister_widgets', 11 );
